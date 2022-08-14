@@ -1,13 +1,13 @@
 import React from "react";
 import { Card, CardBody, CardSubtitle, CardText, Button, Container } from "reactstrap";
 import { useNavigate } from "react-router-dom";
-import { UpdateCourseDatabaseUtil } from "../Database Service Components/UpdateCourseDatabaseUtil";
+import { DeleteCourseDatabaseUtil } from "../Database Service Components/DeleteCourseDatabaseUtil";
 
 function Course({ course, update }) {
 
     // Delete the course from the database
     const deleteCourse = (courseID) => {
-        UpdateCourseDatabaseUtil(courseID, update);
+        DeleteCourseDatabaseUtil(courseID, update);
     }
 
     const navigate = useNavigate();

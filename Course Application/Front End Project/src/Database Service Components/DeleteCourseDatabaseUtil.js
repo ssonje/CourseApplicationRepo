@@ -2,7 +2,7 @@ import axios from "axios";
 import base_url from "../api/bootapi";
 import { toast } from "react-toastify";
 
-export const UpdateCourseDatabaseUtil = (courseID, update) => {
+export const DeleteCourseDatabaseUtil = (courseID, update) => {
     return (
         axios.delete(`${base_url}/courses/${courseID}`).then(
             (response) => {
