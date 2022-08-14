@@ -80,7 +80,9 @@ function UpdateCourse() {
 
                 <Container className="text-center">
                     <Button color="success" outline onClick={(e) => {
-                        handleForm(e);
+                        if (window.confirm("Are you sure you want to update this Course?")) {
+                            handleForm(e);
+                        }
                     }}>Update Course</Button>
                     <Button color="warning m-3" outline onClick={(e) => {
                         navigate('/viewCourses');
