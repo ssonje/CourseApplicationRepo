@@ -36,7 +36,9 @@ function Course({ course, update }) {
                     </CardText>
                     <Container className="text-center">
                         <Button color="danger" outline onClick={() => {
-                            deleteCourse(course.id);
+                            if (window.confirm("Are you sure you want to delete this Course?")) {
+                                deleteCourse(course.id);
+                            }
                         }}>Delete
                         </Button>
 
