@@ -1,10 +1,8 @@
 import React, { useState, Fragment } from "react";
 import { Form, FormGroup, Label, Input, Container, Button } from "reactstrap";
-import axios from "axios";
-import base_url from "./../api/bootapi";
-import { toast } from "react-toastify";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDocumentTitle } from '../Helpers/useDocumentTitleHook';
+import { UpdayeCourseDatabaseUtil } from "../Database Service Components/UpdateCourseDatabaseUtil";
 
 function UpdateCourse() {
     // Call the useDocumentTitle to set the document title and Skip initial execution of useEffect
@@ -32,16 +30,7 @@ function UpdateCourse() {
 
     // Update course into the database
     const updateCourse = (course) => {
-        axios.put(`${base_url}/courses`, course).then(
-            (response) => {
-                // Successfully put the data to the server
-                toast.success("Course updated successfully!!!");
-            },
-            (error) => {
-                // Error while putting the data
-                toast.error("Something went wrong!!!");
-            }
-        )
+        UpdayeCourseDatabaseUtil(course);
     }
 
     return (
