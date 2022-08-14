@@ -1,25 +1,13 @@
 import React from "react";
 import { Card, CardBody, CardSubtitle, CardText, Button, Container } from "reactstrap";
-import axios from "axios";
-import base_url from "../api/bootapi";
-import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { UpdateCourseDatabaseUtil } from "../Database Service Components/UpdateCourseDatabaseUtil";
 
 function Course({ course, update }) {
 
     // Delete the course from the database
     const deleteCourse = (courseID) => {
-        axios.delete(`${base_url}/courses/${courseID}`).then(
-            (response) => {
-                // Successfully post the data to the server
-                toast.success("Course deleted successfully!!!");
-                update(courseID);
-            },
-            (error) => {
-                // Error while deleting the data
-                toast.error("Something went wrong!!!");
-            }
-        )
+        UpdateCourseDatabaseUtil(courseID, update);
     }
 
     const navigate = useNavigate();
