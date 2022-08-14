@@ -49,21 +49,6 @@ function UpdateCourse() {
             <h1 className="text-center my-3">Update Course Details from here</h1>
             <Form>
                 <FormGroup>
-                    <Label for="courseID">
-                        Course ID
-                    </Label>
-                    <Input
-                        id="courseID"
-                        name="id"
-                        type="text"
-                        value={course.id}
-                        onChange={(e)=> {
-                            setCourse({...course, id:e.target.value});
-                        }}
-                    />
-                </FormGroup>
-
-                <FormGroup>
                     <Label for="courseTitle">
                         Course Title
                     </Label>

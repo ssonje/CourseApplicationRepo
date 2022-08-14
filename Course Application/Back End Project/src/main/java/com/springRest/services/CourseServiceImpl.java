@@ -26,6 +26,7 @@ public class CourseServiceImpl implements CourseService {
 		if (course.isPresent()) {
 			return course.get();
 		}
+
 		return null;
 	}
 
@@ -37,9 +38,13 @@ public class CourseServiceImpl implements CourseService {
 
 	@Override
 	public Course updateCourse(Course course) {
-		return courseDAO.save(course);
+		if (getCourse(course.getId()) != null) {
+			return courseDAO.save(course);
+		}
+
+		return null;
 	}
-	
+
 	@Override
 	public void deleteCourse(long courseID) {
 		courseDAO.deleteById(courseID);
