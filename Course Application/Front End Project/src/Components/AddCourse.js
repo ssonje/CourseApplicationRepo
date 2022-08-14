@@ -1,11 +1,9 @@
 import React, { useState, Fragment } from "react";
+import {AddCourseDatabaseUtil} from '../Database Service Components/AddCourseDatabaseUtil';
 import { Form, FormGroup, Label, Input, Container, Button } from "reactstrap";
-import axios from "axios";
-import base_url from "./../api/bootapi";
-import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
-import { useDocumentTitle } from '../Helpers/useDocumentTitleHook';
 import { useCourseFormErrors } from "../Helpers/useCourseFormErrors";
+import { useDocumentTitle } from '../Helpers/useDocumentTitleHook';
+import { useNavigate } from "react-router-dom";
 
 function AddCourse() {
     // Call the useDocumentTitle to set the document title and Skip initial execution of useEffect
@@ -22,7 +20,6 @@ function AddCourse() {
         setIsSubmit(true);
     };
 
-    const navigate = useNavigate();
     const validate = (course) => {
         const errors = {};
 
@@ -37,22 +34,12 @@ function AddCourse() {
         return errors;
     };
 
+    const navigate = useNavigate();
+
     // Add course into the database
     const addCourse = (course) => {
         if (window.confirm("Are you sure you want to add this Course?")) {
-            axios.post(`${base_url}/courses`, course).then(
-                (response) => {
-                    // Successfully post the data to the server
-                    toast.success("Course has been added to the database!!!");
-    
-                    // Navigate to the view courses pages after course has been successfully added to the system
-                    navigate('/viewCourses');
-                },
-                (error)=> {
-                    // Error while posting the data
-                    toast.error("Something went wrong!!!");
-                }
-            )
+            AddCourseDatabaseUtil(navigate, course);
         }
     };
 
