@@ -25,11 +25,6 @@ public class CoursesControllers {
 		return this.courseService.getCourses();
 	}
 
-	@GetMapping("/courses/{courseID}")
-	public Course getCourse(@PathVariable String courseID) {
-		return this.courseService.getCourse(Long.parseLong(courseID));
-	}
-
 	@PostMapping("/courses")
 	public Course addCourse(@RequestBody Course course) {
 		return this.courseService.addCourse(course);

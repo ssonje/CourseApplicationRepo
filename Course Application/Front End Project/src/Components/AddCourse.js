@@ -1,4 +1,4 @@
-import React, { useState, Fragment, useEffect } from "react";
+import React, { useState, Fragment } from "react";
 import { Form, FormGroup, Label, Input, Container, Button } from "reactstrap";
 import axios from "axios";
 import base_url from "./../api/bootapi";
@@ -26,9 +26,6 @@ function AddCourse() {
     const navigate = useNavigate();
     const validate = (course) => {
         const errors = {};
-        if (!course.id) {
-            errors.id = "Course ID cannot be empty!";
-        }
 
         if (!course.name) {
             errors.name = "Course Title cannot be empty!";
@@ -66,22 +63,6 @@ function AddCourse() {
             <h1 className="text-center my-3">Fill Course Details here</h1>
             <Form>
                 <FormGroup>
-                    <Label for="courseID">
-                        Course ID
-                    </Label>
-                    <Input
-                        id="courseID"
-                        name="id"
-                        placeholder="Enter course ID here"
-                        type="text"
-                        onChange={(e)=> {
-                            setCourse({...course, id:e.target.value});
-                        }}
-                    />
-                    <Label style={{color:'red', marginTop:5}}>{courseErrors.id}</Label>
-                </FormGroup>
-
-                <FormGroup>
                     <Label for="courseTitle">
                         Course Title
                     </Label>
@@ -118,12 +99,10 @@ function AddCourse() {
                         handleForm(e);
                     }}>Add Course</Button>
                     <Button color="warning m-3" outline type="reset" onClick={()=> {
-                        console.log("Before clearing - ", course);
-                        setCourse({...course, id:null, name:null, description:null});
+                        setCourse({...course, name:null, description:null});
                         course.id = null;
                         course.name = null;
                         course.description = null;
-                        console.log("After clearing - ", course);
                     }}>
                         Clear
                     </Button>
