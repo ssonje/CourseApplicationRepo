@@ -1,8 +1,8 @@
 import React, { useState, Fragment } from "react";
 import {AddCourseDatabaseUtil} from '../Database Service Components/AddCourseDatabaseUtil';
 import { Form, FormGroup, Label, Input, Container, Button } from "reactstrap";
-import { useCourseFormErrors } from "../Helpers/useCourseFormErrors";
-import { useDocumentTitle } from '../Helpers/useDocumentTitleHook';
+import { useCourseFormErrors } from "../Helper Hooks/useCourseFormErrors";
+import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 import { useNavigate } from "react-router-dom";
 
 function AddCourse() {

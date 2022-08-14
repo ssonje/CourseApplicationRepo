@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
-import { useDocumentTitle } from '../Helpers/useDocumentTitleHook';
+import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 
 function Home() {
     // Call the useDocumentTitle to set the document title and Skip initial execution of useEffect

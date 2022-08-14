@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 import Course from './Course';
-import { useDocumentTitle } from '../Helpers/useDocumentTitleHook';
-import { useFetchData } from "../Helpers/useFetchDataHook";
+import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
+import { useFetchData } from "../Helper Hooks/useFetchDataHook";
 import { GetAllCoursesFromDatabase } from "../Database Service Components/GetAllCoursesFromDatabaseUtil";
 
 function ViewCourses() {

@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from "react";
 import { Form, FormGroup, Label, Input, Container, Button } from "reactstrap";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useDocumentTitle } from '../Helpers/useDocumentTitleHook';
+import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 import { UpdayeCourseDatabaseUtil } from "../Database Service Components/UpdateCourseDatabaseUtil";
 
 function UpdateCourse() {
