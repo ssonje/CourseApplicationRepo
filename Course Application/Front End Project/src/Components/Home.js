@@ -20,9 +20,10 @@ function Home() {
                     <p className="mb-0"><em>In the backend, he uses the Spring Boot.</em></p>
                     <p><em>In the frontend, he uses the React JS.</em></p>
 
+                    <a href="https://www.linkedin.com/in/sanket-sonje-6801a3158/" target="_blank"><i class="fa fa-linkedin-square fa-2x me-3"></i></a>
+                    <a href="https://medium.com/@sanket.sonje99" target="_blank"><i class="fa fa-medium fa-2x me-3"></i></a>
+                    <a href="https://github.com/ssonje" target="_blank"><i class="fa fa-github fa-2x me-3"></i></a>
                     <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ssonje99@gmail.com" target="_blank"><i class="fa fa-envelope fa-2x me-3"></i></a>
-                    <a href="https://www.linkedin.com/in/sanket-sonje-6801a3158/" target="_blank"><i class="fa fa-linkedin-square fa-2x me-3"></i></a> 
-                    <a href="https://medium.com/@sanket.sonje99" target="_blank"><i class="fa fa-medium fa-2x me-3"></i></a>                  
                 </div>
             </div>
         </div>
