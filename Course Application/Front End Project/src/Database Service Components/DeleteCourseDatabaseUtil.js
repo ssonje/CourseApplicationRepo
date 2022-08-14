@@ -1,5 +1,5 @@
 import axios from "axios";
-import base_url from "../api/bootapi";
+import base_url from "../Constants/serverBaseURL";
 import { toast } from "react-toastify";
 
 export const DeleteCourseDatabaseUtil = (courseID, update) => {
