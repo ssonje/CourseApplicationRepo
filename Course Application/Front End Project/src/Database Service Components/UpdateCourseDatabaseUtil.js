@@ -2,7 +2,7 @@ import axios from "axios";
 import base_url from "../Constants/serverBaseURL";
 import { toast } from "react-toastify";
 
-export const UpdayeCourseDatabaseUtil = (course) => {
+export const UpdateCourseDatabaseUtil = (course) => {
     return (
         axios.put(`${base_url}/courses`, course).then(
             (response) => {

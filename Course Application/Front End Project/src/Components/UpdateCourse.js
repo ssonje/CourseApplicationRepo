@@ -1,8 +1,9 @@
 import React, { useState, Fragment } from "react";
 import { Form, FormGroup, Label, Input, Container, Button } from "reactstrap";
+import { useUpdateCourseFormErrors } from "../Helper Hooks/useUpdateCourseFormErrors";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
-import { UpdayeCourseDatabaseUtil } from "../Database Service Components/UpdateCourseDatabaseUtil";
+import { UpdateCourseDatabaseUtil } from "../Database Service Components/UpdateCourseDatabaseUtil";
 
 function UpdateCourse() {
     // Call the useDocumentTitle to set the document title and Skip initial execution of useEffect
@@ -21,17 +22,41 @@ function UpdateCourse() {
         description: description
     });
 
+    // Update Form Validation
+    const [courseErrors, setCourseErrors] = useState({});
+    const [isSubmit, setIsSubmit] = useState(false);
+
     // Form handler function
     const handleForm = (e) => {
         e.preventDefault();
-        updateCourse(course);
-        navigate('/viewCourses');
+        setCourseErrors(validate(course));
+        setIsSubmit(true);
+    };
+
+    const validate = (course) => {
+        const errors = {};
+
+        if (!course.name) {
+            errors.name = "Course Title cannot be empty!";
+        }
+
+        if (!course.description) {
+            errors.description = "Course Description cannot be empty!";
+        }
+
+        return errors;
     };
 
     // Update course into the database
     const updateCourse = (course) => {
-        UpdayeCourseDatabaseUtil(course);
+        if (window.confirm("Are you sure you want to update this Course?")) {
+            UpdateCourseDatabaseUtil(course);
+            navigate('/viewCourses');
+        }
     }
+
+    // Call the useUpdateCourseFormErrors in-order to Skip initial execution of useEffect and update course
+    useUpdateCourseFormErrors(courseErrors, course, isSubmit, updateCourse);
 
     return (
         <Fragment>
@@ -50,6 +75,7 @@ function UpdateCourse() {
                             setCourse({...course, name:e.target.value});
                         }}
                     />
+                    <Label style={{color:'red', marginTop:5}}>{courseErrors.name}</Label>
                 </FormGroup>
 
                 <FormGroup>
@@ -65,13 +91,12 @@ function UpdateCourse() {
                             setCourse({...course, description:e.target.value});
                         }}
                     />
+                    <Label style={{color:'red', marginTop:5}}>{courseErrors.description}</Label>
                 </FormGroup>
 
                 <Container className="text-center">
                     <Button color="success" outline onClick={(e) => {
-                        if (window.confirm("Are you sure you want to update this Course?")) {
-                            handleForm(e);
-                        }
+                        handleForm(e);
                     }}>Update Course</Button>
                     <Button color="warning m-3" outline onClick={(e) => {
                         navigate('/viewCourses');
