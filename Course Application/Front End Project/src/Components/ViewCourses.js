@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Course from './Course';
 import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 import { useFetchData } from "../Helper Hooks/useFetchDataHook";
@@ -18,8 +18,8 @@ function ViewCourses() {
     // Call the useFetchData to set all courses once when we setup the page and Skip initial execution of useEffect
     useFetchData(getAllCourses);
 
-    const removeCourseByID=(id)=>{
-        setCourses(courses.filter((c)=>c.id != id));
+    const removeCourseByID = (id) => {
+        setCourses(courses.filter((c) => c.id != id));
     }
 
     return (

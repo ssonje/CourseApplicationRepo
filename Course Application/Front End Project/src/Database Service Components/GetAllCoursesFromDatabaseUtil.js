@@ -10,7 +10,7 @@ export const GetAllCoursesFromDatabase = (setCourses) => {
                 toast.success("All courses has been loaded!!!");
                 setCourses(response.data);
             },
-            (error)=> {
+            (error) => {
                 // Error while fetching the data from the server
                 toast.error("Something went wrong!!!");
             }

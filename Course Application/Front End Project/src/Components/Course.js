@@ -31,13 +31,15 @@ function Course({ course, update }) {
                         </Button>
 
                         <Button color="warning m-3" outline onClick={() => {
-                            navigate('/updateCourse', {state: {
-                                id: course.id,
-                                name: course.name,
-                                description: course.description
-                            }});
+                            navigate('/updateCourse', {
+                                state: {
+                                    id: course.id,
+                                    name: course.name,
+                                    description: course.description
+                                }
+                            });
                         }}>
-                        Update
+                            Update
                         </Button>
                     </Container>
                 </CardBody>
