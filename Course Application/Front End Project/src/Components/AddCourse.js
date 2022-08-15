@@ -6,15 +6,19 @@ import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 import { useNavigate } from "react-router-dom";
 import { FormValidation } from "../Helper Components/FormValidation";
 
+/**
+ * @compoent
+ * `AddCourse` provides the interface and functionality for adding user into the database.
+ */
 function AddCourse() {
-    // Call the useDocumentTitle to set the document title and Skip initial execution of useEffect
+    // Call the useDocumentTitle to set the document title and Skip initial execution of useEffect.
     useDocumentTitle("Add Course");
 
     const [course, setCourse] = useState([]);
     const [courseErrors, setCourseErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
 
-    // Form handler function
+    // Form handler function called when we click on the `Add Course` button.
     const handleForm = (e) => {
         e.preventDefault();
         setCourseErrors(FormValidation(course));
@@ -23,14 +27,14 @@ function AddCourse() {
 
     const navigate = useNavigate();
 
-    // Add course into the database
+    // Add course into the database.
     const addCourse = (course) => {
         if (window.confirm("Are you sure you want to add this Course?")) {
             AddCourseDatabaseUtil(navigate, course);
         }
     };
 
-    // Call the useDocumentTitle in-order to Skip initial execution of useEffect and add course
+    // Call the useCourseFormErrors in-order to Skip initial execution of useEffect and add course to the database.
     useCourseFormErrors(courseErrors, course, isSubmit, addCourse);
 
     return (
