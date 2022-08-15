@@ -18,7 +18,7 @@ function AddCourse() {
     const [courseErrors, setCourseErrors] = useState({});
     const [isSubmit, setIsSubmit] = useState(false);
 
-    // Form handler function called when we click on the `Add Course` button.
+    // Form handler function is called when we click on the `Add Course` button.
     const handleForm = (e) => {
         e.preventDefault();
         setCourseErrors(FormValidation(course));
@@ -34,7 +34,7 @@ function AddCourse() {
         }
     };
 
-    // Call the useCourseFormErrors in-order to Skip initial execution of useEffect and add course to the database.
+    // Call the useCourseFormErrors in-order to skip initial execution of useEffect and add course to the database.
     useCourseFormErrors(courseErrors, course, isSubmit, addCourse);
 
     return (
