@@ -60,7 +60,7 @@ function AddCourse() {
                     <Input
                         id="courseDescription"
                         name="description"
-                        placeholder="Enter course Description here"
+                        placeholder="Enter course description here"
                         type="textarea"
                         onChange={(e) => {
                             setCourse({ ...course, description: e.target.value });
