@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
 import { Form, FormGroup, Label, Input, Container, Button } from "reactstrap";
-import { useUpdateCourseFormErrors } from "../Helper Hooks/useUpdateCourseFormErrors";
+import { useCourseFormErrors } from "../Helper Hooks/useCourseFormErrors";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 import { UpdateCourseDatabaseUtil } from "../Database Service Components/UpdateCourseDatabaseUtil";
@@ -55,8 +55,8 @@ function UpdateCourse() {
         }
     }
 
-    // Call the useUpdateCourseFormErrors in-order to Skip initial execution of useEffect and update course
-    useUpdateCourseFormErrors(courseErrors, course, isSubmit, updateCourse);
+    // Call the useCourseFormErrors in-order to Skip initial execution of useEffect and update course
+    useCourseFormErrors(courseErrors, course, isSubmit, updateCourse);
 
     return (
         <Fragment>
