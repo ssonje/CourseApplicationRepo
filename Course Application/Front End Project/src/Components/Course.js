@@ -7,7 +7,9 @@ function Course({ course, update }) {
 
     // Delete the course from the database
     const deleteCourse = (courseID) => {
-        DeleteCourseDatabaseUtil(courseID, update);
+        if (window.confirm("Are you sure you want to delete this Course?")) {
+            DeleteCourseDatabaseUtil(courseID, update);
+        }
     }
 
     const navigate = useNavigate();
@@ -24,9 +26,7 @@ function Course({ course, update }) {
                     </CardText>
                     <Container className="text-center">
                         <Button color="danger" outline onClick={() => {
-                            if (window.confirm("Are you sure you want to delete this Course?")) {
-                                deleteCourse(course.id);
-                            }
+                            deleteCourse(course.id);
                         }}>Delete
                         </Button>
 
