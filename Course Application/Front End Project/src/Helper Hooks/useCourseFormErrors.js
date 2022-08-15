@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export function useCourseFormErrors( courseErrors, course, isSubmit, addCourse ) {
+export function useCourseFormErrors( courseErrors, course, isSubmit, operationForCourseOnDatabase ) {
 
     const isInitialRender = useRef(true);
 
@@ -13,7 +13,7 @@ export function useCourseFormErrors( courseErrors, course, isSubmit, addCourse )
         }
 
         if (Object.keys(courseErrors).length === 0 && isSubmit) {
-            addCourse(course);
+            operationForCourseOnDatabase(course);
         }
     }, [courseErrors]);
 
