@@ -1,10 +1,11 @@
 import { useEffect, useRef } from 'react';
 
-export function useCourseFormErrors( courseErrors, course, isSubmit, addCourse ) {
+export function useUpdateCourseFormErrors( courseErrors, course, isSubmit, updateCourse ) {
 
     const isInitialRender = useRef(true);
 
     useEffect(() => {
+
         // Skip initial execution of useEffect
         if(isInitialRender.current) {
             // Set isInitialRender.current to false so subsequent changes of dependency array will make useEffect to execute
@@ -13,7 +14,7 @@ export function useCourseFormErrors( courseErrors, course, isSubmit, addCourse )
         }
 
         if (Object.keys(courseErrors).length === 0 && isSubmit) {
-            addCourse(course);
+            updateCourse(course);
         }
     }, [courseErrors]);
 

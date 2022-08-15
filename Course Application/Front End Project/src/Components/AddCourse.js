@@ -43,7 +43,7 @@ function AddCourse() {
         }
     };
 
-    // Call the useDocumentTitle to set the document title and Skip initial execution of useEffect
+    // Call the useDocumentTitle in-order to Skip initial execution of useEffect and add course
     useCourseFormErrors(courseErrors, course, isSubmit, addCourse);
 
     return (
