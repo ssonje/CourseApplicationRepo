@@ -4,6 +4,7 @@ import { Form, FormGroup, Label, Input, Container, Button } from "reactstrap";
 import { useCourseFormErrors } from "../Helper Hooks/useCourseFormErrors";
 import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 import { useNavigate } from "react-router-dom";
+import { FormValidation } from "../Helper Components/FormValidation";
 
 function AddCourse() {
     // Call the useDocumentTitle to set the document title and Skip initial execution of useEffect
@@ -16,22 +17,8 @@ function AddCourse() {
     // Form handler function
     const handleForm=(e)=> {
         e.preventDefault();
-        setCourseErrors(validate(course));
+        setCourseErrors(FormValidation(course));
         setIsSubmit(true);
-    };
-
-    const validate = (course) => {
-        const errors = {};
-
-        if (!course.name) {
-            errors.name = "Course Title cannot be empty!";
-        }
-
-        if (!course.description) {
-            errors.description = "Course Description cannot be empty!";
-        }
-
-        return errors;
     };
 
     const navigate = useNavigate();

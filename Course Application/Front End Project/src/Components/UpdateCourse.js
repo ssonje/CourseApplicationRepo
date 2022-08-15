@@ -4,6 +4,7 @@ import { useCourseFormErrors } from "../Helper Hooks/useCourseFormErrors";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 import { UpdateCourseDatabaseUtil } from "../Database Service Components/UpdateCourseDatabaseUtil";
+import { FormValidation } from "../Helper Components/FormValidation";
 
 function UpdateCourse() {
     // Call the useDocumentTitle to set the document title and Skip initial execution of useEffect
@@ -29,22 +30,8 @@ function UpdateCourse() {
     // Form handler function
     const handleForm = (e) => {
         e.preventDefault();
-        setCourseErrors(validate(course));
+        setCourseErrors(FormValidation(course));
         setIsSubmit(true);
-    };
-
-    const validate = (course) => {
-        const errors = {};
-
-        if (!course.name) {
-            errors.name = "Course Title cannot be empty!";
-        }
-
-        if (!course.description) {
-            errors.description = "Course Description cannot be empty!";
-        }
-
-        return errors;
     };
 
     // Update course into the database
