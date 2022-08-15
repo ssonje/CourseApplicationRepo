@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+import { LINKEDIN_URL, MEDIUM_URL, GITHUB_URL, COMPOSE_MAIL_URL } from '../Constants/socialMediaURLs';
 import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 
 function Home() {
@@ -20,10 +21,10 @@ function Home() {
                     <p className="mb-0"><em>In the backend, he uses the Spring Boot.</em></p>
                     <p><em>In the frontend, he uses the React JS.</em></p>
 
-                    <a href="https://www.linkedin.com/in/sanket-sonje-6801a3158/" target="_blank"><i class="fa fa-linkedin-square fa-2x me-3"></i></a>
-                    <a href="https://medium.com/@sanket.sonje99" target="_blank"><i class="fa fa-medium fa-2x me-3"></i></a>
-                    <a href="https://github.com/ssonje" target="_blank"><i class="fa fa-github fa-2x me-3"></i></a>
-                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ssonje99@gmail.com" target="_blank"><i class="fa fa-envelope fa-2x me-3"></i></a>
+                    <a href={LINKEDIN_URL} target="_blank"><i class="fa fa-linkedin-square fa-2x me-3"></i></a>
+                    <a href={MEDIUM_URL} target="_blank"><i class="fa fa-medium fa-2x me-3"></i></a>
+                    <a href={GITHUB_URL} target="_blank"><i class="fa fa-github fa-2x me-3"></i></a>
+                    <a href={COMPOSE_MAIL_URL} target="_blank"><i class="fa fa-envelope fa-2x me-3"></i></a>
                 </div>
             </div>
         </div>
