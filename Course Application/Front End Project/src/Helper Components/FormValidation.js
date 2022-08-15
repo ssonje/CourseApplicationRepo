@@ -3,7 +3,7 @@ export const FormValidation = (course) => {
     const errors = {};
 
     if (!course.name) {
-        errors.name = "Course Title cannot be empty!";
+        errors.name = "Course Name cannot be empty!";
     }
 
     if (!course.description) {

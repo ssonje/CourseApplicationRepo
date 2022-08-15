@@ -50,19 +50,19 @@ function UpdateCourse() {
             <h1 className="text-center my-3">Update Course Details from here</h1>
             <Form>
                 <FormGroup>
-                    <Label for="courseTitle">
-                        Course Title
+                    <Label for="courseName">
+                        Course Name
                     </Label>
                     <Input
-                        id="courseTitle"
+                        id="courseName"
                         name="name"
                         type="text"
                         value={course.name}
-                        onChange={(e)=> {
-                            setCourse({...course, name:e.target.value});
+                        onChange={(e) => {
+                            setCourse({ ...course, name: e.target.value });
                         }}
                     />
-                    <Label style={{color:'red', marginTop:5}}>{courseErrors.name}</Label>
+                    <Label style={{ color: 'red', marginTop: 5 }}>{courseErrors.name}</Label>
                 </FormGroup>
 
                 <FormGroup>
@@ -74,11 +74,11 @@ function UpdateCourse() {
                         name="description"
                         type="textarea"
                         value={course.description}
-                        onChange={(e)=> {
-                            setCourse({...course, description:e.target.value});
+                        onChange={(e) => {
+                            setCourse({ ...course, description: e.target.value });
                         }}
                     />
-                    <Label style={{color:'red', marginTop:5}}>{courseErrors.description}</Label>
+                    <Label style={{ color: 'red', marginTop: 5 }}>{courseErrors.description}</Label>
                 </FormGroup>
 
                 <Container className="text-center">
