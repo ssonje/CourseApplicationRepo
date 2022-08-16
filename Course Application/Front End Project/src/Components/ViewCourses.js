@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import Course from './Course';
 import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 import { useFetchData } from "../Helper Hooks/useFetchDataHook";
-import { GetAllCoursesFromDatabase } from "../Database Service Components/GetAllCoursesFromDatabaseUtil";
+import { GetAllCoursesFromDatabaseUtil } from "../Database Service Components/GetAllCoursesFromDatabaseUtil";
 
 function ViewCourses() {
     const [courses, setCourses] = useState([]);
 
-    // Get all the courses from the server
+    // Get all the courses from the database
     const getAllCourses = () => {
-        GetAllCoursesFromDatabase(setCourses);
+        GetAllCoursesFromDatabaseUtil(setCourses);
     };
 
     // Call the useDocumentTitle to set the document title and Skip initial execution of useEffect
