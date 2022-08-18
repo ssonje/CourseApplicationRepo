@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { LINKEDIN_URL, MEDIUM_URL, GITHUB_URL, COMPOSE_MAIL_URL } from '../Constants/socialMediaURLs';
 import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 
+/**
+ * @compoent
+ * `Home` component provides the UI for Home page in course application.
+ */
 function Home() {
     // Call the useDocumentTitle to set the document title and Skip initial execution of useEffect
     useDocumentTitle("Home");

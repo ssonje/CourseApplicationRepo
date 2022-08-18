@@ -1,5 +1,11 @@
 import { useEffect, useRef } from 'react';
 
+/**
+ * @hook
+ * `useDocumentTitle` custom hook is used in-order to skip initial twice execution of useEffect and add document title.
+ * @param {pageTitle} pageTitle
+ * This pageTitle is used to add the title to the document.
+ */
 export function useDocumentTitle(pageTitle) {
 
     const isInitialRender = useRef(true);

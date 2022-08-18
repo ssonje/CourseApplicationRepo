@@ -4,6 +4,10 @@ import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 import { useFetchData } from "../Helper Hooks/useFetchDataHook";
 import { GetAllCoursesFromDatabaseUtil } from "../Database Service Components/GetAllCoursesFromDatabaseUtil";
 
+/**
+ * @compoent
+ * `ViewCourses` component provides the UI for View all Courses in course application.
+ */
 function ViewCourses() {
     const [courses, setCourses] = useState([]);
 
