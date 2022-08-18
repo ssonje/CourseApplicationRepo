@@ -6,6 +6,10 @@ import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 import { UpdateCourseDatabaseUtil } from "../Database Service Components/UpdateCourseDatabaseUtil";
 import { FormValidation } from "../Helper Components/FormValidation";
 
+/**
+ * @compoent
+ * `UpdateCourse` component provides the UI for Update Course in course application.
+ */
 function UpdateCourse() {
     // Call the useDocumentTitle to set the document title and Skip initial execution of useEffect
     useDocumentTitle("Update Course");

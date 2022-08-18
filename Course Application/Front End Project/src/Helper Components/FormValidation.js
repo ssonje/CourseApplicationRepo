@@ -1,3 +1,7 @@
+/**
+ * @compoent
+ * `FormValidation` component provides functionality to validate the form.
+ */
 export const FormValidation = (course) => {
 
     const errors = {};

@@ -1,6 +1,10 @@
 import React from "react";
 import { Card, CardBody } from "reactstrap";
 
+/**
+ * @compoent
+ * `Header` component provides the common header UI course application.
+ */
 function Header() {
     return (
         <div>

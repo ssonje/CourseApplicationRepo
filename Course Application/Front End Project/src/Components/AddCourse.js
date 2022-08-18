@@ -8,7 +8,7 @@ import { FormValidation } from "../Helper Components/FormValidation";
 
 /**
  * @compoent
- * `AddCourse` provides the interface and functionality for adding user into the database.
+ * `AddCourse` component provides the UI and functionality for adding user into the database.
  */
 function AddCourse() {
     // Call the useDocumentTitle to set the document title and Skip initial execution of useEffect.

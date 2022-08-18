@@ -3,6 +3,14 @@ import { Card, CardBody, CardSubtitle, CardText, Button, Container } from "react
 import { useNavigate } from "react-router-dom";
 import { DeleteCourseDatabaseUtil } from "../Database Service Components/DeleteCourseDatabaseUtil";
 
+/**
+ * @compoent
+ * `Course` component provides the common UI for Course and functionality for deleting and updating user into the database.
+ * @param {course} course
+ * This `course` will displayed on the screen.
+ * @param {update} update
+ * This function provides the functionality to update the course from the database.
+ */
 function Course({ course, update }) {
 
     // Delete the course from the database
