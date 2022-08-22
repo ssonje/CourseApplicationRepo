@@ -6,7 +6,7 @@ import { useEffect, useRef } from 'react';
  * @param {pageTitle} pageTitle
  * This pageTitle is used to add the title to the document.
  */
-export function useDocumentTitle(pageTitle) {
+const useDocumentTitle = (pageTitle) => {
 
     const isInitialRender = useRef(true);
 
@@ -22,3 +22,5 @@ export function useDocumentTitle(pageTitle) {
     }, []);
 
 }
+
+export default useDocumentTitle;
