@@ -12,7 +12,7 @@ import { useEffect, useRef } from 'react';
  * @param {operationForCourseOnDatabase} operationForCourseOnDatabase
  * This function will be executed if `isSubmit` is true and there are no `courseErrors`.
  */
-export function useCourseFormErrors(courseErrors, course, isSubmit, operationForCourseOnDatabase) {
+const useCourseFormErrors = (courseErrors, course, isSubmit, operationForCourseOnDatabase) => {
 
     const isInitialRender = useRef(true);
 
@@ -30,3 +30,5 @@ export function useCourseFormErrors(courseErrors, course, isSubmit, operationFor
     }, [courseErrors]);
 
 }
+
+export default useCourseFormErrors;

@@ -1,7 +1,7 @@
 import React from 'react';
+import useDocumentTitle from '../Helper Hooks/useDocumentTitleHook';
 import { useNavigate } from "react-router-dom";
 import { LINKEDIN_URL, MEDIUM_URL, GITHUB_URL, COMPOSE_MAIL_URL } from '../Constants/socialMediaURLs';
-import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 
 /**
  * @compoent

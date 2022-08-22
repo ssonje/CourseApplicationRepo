@@ -6,7 +6,7 @@ import { useEffect, useRef } from 'react';
  * @param {fetchData} fetchData
  * This function is used to fetch the data from the database.
  */
-export function useFetchData(fetchData) {
+const useFetchData = (fetchData) => {
 
     const isInitialRender = useRef(true);
 
@@ -22,3 +22,5 @@ export function useFetchData(fetchData) {
     }, []);
 
 }
+
+export default useFetchData;

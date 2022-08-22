@@ -1,8 +1,8 @@
 import React, { useState, Fragment } from "react";
+import useCourseFormErrors from "../Helper Hooks/useCourseFormErrors";
+import useDocumentTitle from '../Helper Hooks/useDocumentTitleHook';
 import { Form, FormGroup, Label, Input, Container, Button } from "reactstrap";
-import { useCourseFormErrors } from "../Helper Hooks/useCourseFormErrors";
 import { useNavigate, useLocation } from "react-router-dom";
-import { useDocumentTitle } from '../Helper Hooks/useDocumentTitleHook';
 import { UpdateCourseDatabaseUtil } from "../Database Service Components/UpdateCourseDatabaseUtil";
 import { FormValidation } from "../Helper Components/FormValidation";
 
